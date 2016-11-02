@@ -1,5 +1,6 @@
 function validateForm(){
 
+var letrasnormales = /^[A-Za-z\_\-\.\s\xF1\xD1]+$/;
 
 	function validarNombre(){
 		valor = document.getElementById('name').value;
@@ -92,18 +93,17 @@ function validateForm(){
 
 
 	function SelectBici(){
-		valor = document.getElementsByTagName('select')[4];
-		if (tipo = select.value){
+		var valor = document.getElementsByTagName('select')[0];
+		var tipo = valor.value; 
 		var uno = document.getElementsByClassName ('input-box')[4];
 		var dos = document.createElement('span');
 		var tres = document.createTextNode('Debes seleccionar al menos un tipo de bici');
 		dos.appendChild(tres);
 		uno.appendChild(dos);
-		return tipo == 'urbana' || tipo == 'trekking' || tipo == 'electrica' || tipo == 'estatica'
-	}
+
+		return tipo == 'urbana' || tipo == 'trekking' || tipo == 'electrica' || tipo == 'estatica';
 	}		
 	SelectBici();
 
 }
 
-validateForm();
